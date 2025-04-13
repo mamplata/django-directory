@@ -1,0 +1,13 @@
+<!-- projectmanager/templates/projectmanager/task_form.html -->
+{% extends 'projectmanager/base.html' %}
+{% block title %}
+  Add Task
+{% endblock %}
+{% block content %}
+  <h1>Add Task to {{ project.name }}</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Add Task</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!-- projectmanager/templates/projectmanager/home.html -->
+{% extends 'projectmanager/base.html' %}
+{% block title %}
+  Your Projects
+{% endblock %}
+{% block content %}
+  <h1>Your Projects</h1>
+  <a href="{% url 'project_create' %}" class="btn btn-primary mb-3">Create New Project</a>
+  <div class="list-group">
+    {% for project in projects %}
+      <a href="{% url 'project_detail' project.pk %}" class="list-group-item list-group-item-action">{{ project.name }}</a>
+    {% empty %}
+      <p>You have no projects yet.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

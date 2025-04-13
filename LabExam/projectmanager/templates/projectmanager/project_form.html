@@ -1,0 +1,13 @@
+<!-- projectmanager/templates/projectmanager/project_form.html -->
+{% extends 'projectmanager/base.html' %}
+{% block title %}
+  Create Project
+{% endblock %}
+{% block content %}
+  <h1>Create New Project</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Create Project</button>
+  </form>
+{% endblock %}
