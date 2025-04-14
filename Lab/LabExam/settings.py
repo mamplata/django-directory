@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-uqh358eek69rz$iq*i$lroc!o4v!po4u#o1dz0vg+6&#t7kb)4'
+SECRET_KEY = 'django-insecure--yslg--d#ik_h^@t7n6+-m)rlw=^pv(sa=p7y403qktvbsb=&$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'moviecollection',
+    'projectmanager',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +122,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # LabExam/settings.py
 LOGIN_URL = '/accounts/login/'

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+  My Movies
+{% endblock %}
+{% block content %}
+  <h2>My Movie Collection</h2>
+  <a href="{% url 'movie_create' %}" class="btn btn-primary mb-3">Add New Movie</a>
+  <ul class="list-group">
+    {% for movie in movies %}
+      <li class="list-group-item p-0">
+        <a href="{% url 'movie_detail' movie.pk %}" class="d-block text-decoration-none text-reset p-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <strong>{{ movie.title }}</strong>
+              <small class="ml-2">by {{ movie.owner.username }}</small>
+            </div>
+            <span class="badge badge-secondary">{{ movie.release_year }}</span>
+          </div>
+        </a>
+      </li>
+    {% empty %}
+      <li class="list-group-item">You have not added any movies yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+  {{ movie.title }} Details
+{% endblock %}
+{% block content %}
+  <h2>{{ movie.title }}</h2>
+  <p>
+    <strong>Genre:</strong> {{ movie.genre }}
+  </p>
+  <p>
+    <strong>Release Year:</strong> {{ movie.release_year }}
+  </p>
+  <p>
+    <strong>Published by:</strong> {{ movie.owner.username }}
+  </p>
+  <p>{{ movie.description }}</p>
+  <hr />
+  <h4>Reviews</h4>
+  <a href="{% url 'review_create' movie.id %}" class="btn btn-secondary mb-3">Add Review</a>
+  <ul class="list-group">
+    {% for review in reviews %}
+      <li class="list-group-item">
+        <p>{{ review.review_text }}</p>
+        <p>
+          <strong>Rating:</strong> {{ review.rating }}/5
+        </p>
+        <small class="text-muted">{{ review.created_at }}</small>
+      </li>
+    {% empty %}
+      <li class="list-group-item">No reviews for this movie yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
